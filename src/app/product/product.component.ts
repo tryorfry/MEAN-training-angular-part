@@ -9,10 +9,16 @@ import { CartService } from '../cart.service';
 })
 export class ProductComponent implements OnInit {
   @Input() product
+  alreadyaddedincart = false;
 
   constructor(private router: Router, private cartservice: CartService) { }
 
   ngOnInit() {
+    this.cartservice.cartitems.forEach((eachitem)=>{
+      if(eachitem.product == this.product.productid) {
+        this.alreadyaddedincart = true;
+      }
+    });
   }
 
   addToCart(event) {
@@ -27,7 +33,8 @@ export class ProductComponent implements OnInit {
         }
       };
       this.cartservice.addToCart(body).subscribe(
-        (response) => {alert('added to the cart')},
+        (response) => {alert('added to the cart')
+      },
         (error) => {alert('failed to add to cart')}
       )
     }
@@ -40,6 +47,10 @@ export class ProductComponent implements OnInit {
   goToProduct() {
     var producturl = "/product/"+this.product.productid;
     this.router.navigate([producturl]);
+  }
+
+  ngDocheck() {
+    console.log(this.cartservice.cartitems);
   }
 
 }

@@ -1,10 +1,28 @@
 <div class="container">
-  <div *ngIf="!cartitems" class="row alert-danger"> Your Cart is empty</div>
-</div>
-<div *ngIf="cartitems && cartitems.length > 0">
-  <div *ngFor="let item of cartitems" class="row">
-      <!-- 
-        <img src="item.product.image" sytle="height: 70px, width: 70px"> -->
-      <label>{{item.product.name}}</label>
+
+  <div *ngIf="cartitems && !cartitems.length>0" class="row alert alert-danger">
+    Your Cart is Empty
   </div>
+
+  <div *ngIf="cartitems && cartitems.length>0">
+    <div class="card">
+      <h1> Your Cart Items</h1>
+      <hr>
+      <div *ngFor="let eachitem of cartitems">
+        <div class="card-body">
+          <img [src]="eachitem.product.image" style="height:70px ; width:70px " alt="">
+          <label for="">{{eachitem.product.name}}</label>
+          <label for="">{{eachitem.product.price}}</label>
+          <label for="">{{eachitem.product.quantity}}</label>
+          <i (click)="removeFromCart(eachitem)" class="fa fa-trash"></i>
+        </div>
+      </div>
+
+      <div class="alert alert-info">
+        <strong>Total</strong> {{totalbill}}
+      </div>
+      <button routerLink="/order" class="btn btn-primary">Place Order</button>
+    </div>
+  </div>
+
 </div>

@@ -1,3 +1,8 @@
+<div>
+  <input type="radio" value="increasing" [(ngModel)]="pricesort">Low to High
+  <input type="radio" value="decreasing" [(ngModel)]="pricesort">Hight to Low
+  <button (click)="sort">Sort</button>
+</div>
 <div class="row">
   <app-product *ngFor="let eachproduct of products" [product]="eachproduct"></app-product>
 </div>

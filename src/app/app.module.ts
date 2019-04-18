@@ -20,6 +20,7 @@ import { RootComponent } from './root/root.component';
 import { ProductdetailComponent } from './productdetail/productdetail.component';
 import { DiscountPipe } from './discount.pipe';
 import { CartComponent } from './cart/cart.component';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { CartComponent } from './cart/cart.component';
     RootComponent,
     ProductdetailComponent,
     DiscountPipe,
-    CartComponent
+    CartComponent,
+    HighlightDirective
 
   ],
   imports: [
