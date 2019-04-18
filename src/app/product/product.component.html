@@ -1,0 +1,10 @@
+<div (click)="goToProduct()" class="card">
+  <img class="card-img-top" style="width: 300px; height: 300px" [src]="product.image_url" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{product.name}}</h5>
+    <p class="card-text">{{product.description}}</p>
+    <p class="card-text">{{product.price | currency}}</p>        
+    <p class="card-text">{{product.price | discount:50 | currency}}</p>
+    <button class="btn btn-warning" (click)="addToCart($event)"> Add to Cart</button>
+  </div>
+</div>

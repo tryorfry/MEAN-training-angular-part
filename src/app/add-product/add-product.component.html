@@ -1,0 +1,13 @@
+<h1> Add Product</h1>
+<div class="container">
+  <label>Name</label>
+    <input class="form-control" [(ngModel)]="product.name" type="text" ><br>    
+  <label>Description</label>  
+  <textarea rows="5" class="form-control" [(ngModel)]="product.description"></textarea>
+  <label>Image URL</label>        
+    <input class="form-control" [(ngModel)]="product.image_url" type="text" ><br>
+  <label>Price</label>
+    <input class="form-control" [(ngModel)]="product.price" type="text" ><br>  
+    <button class="btn btn-info" (click)="createProduct()">Add Product</button> 
+</div>
+

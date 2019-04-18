@@ -1,0 +1,10 @@
+<div class="container">
+  <div *ngIf="!cartitems" class="row alert-danger"> Your Cart is empty</div>
+</div>
+<div *ngIf="cartitems && cartitems.length > 0">
+  <div *ngFor="let item of cartitems" class="row">
+      <!-- 
+        <img src="item.product.image" sytle="height: 70px, width: 70px"> -->
+      <label>{{item.product.name}}</label>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<div class="container">
+    <p>Hello {{name}}! Please enter your details</p>
+
+    <input class="form-control" [(ngModel)]="email" type="text" placeholder="Email"><br>
+    <p>{{email}}</p>
+    <input class="form-control" [(ngModel)]="password" type="password" placeholder="Password"><br>
+    <button class="btn btn-info" (click)="login()">Login</button>
+</div>

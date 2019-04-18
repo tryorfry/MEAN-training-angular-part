@@ -1,0 +1,11 @@
+<h1>Sign UP</h1>
+
+<div class="container">
+    <input class="form-control" [(ngModel)]="user.name" type="text" placeholder="UserName"><br>    
+    <input class="form-control" [(ngModel)]="user.email" type="text" placeholder="Email"><br>
+    <input class="form-control" [(ngModel)]="user.password" type="password" placeholder="Password"><br>
+    <input class="form-control" [(ngModel)]="user.confirmPassword" type="password" placeholder="Password"><br>    
+    <button class="btn btn-info" (click)="signup()">Sign Up</button>
+    <button class="btn btn-info" (click)="autofill()">Auto Fill</button> 
+</div>
+

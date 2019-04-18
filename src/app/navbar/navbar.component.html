@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink="/"> My App</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li *ngIf="isUserLoggedIn" class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-user fa-2x"></i>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" routerLink="/addproduct">Product</a>
+          <a class="dropdown-item" href="#">Delete Account</a>
+        </div>
+      </li>
+    </ul>
+    <div class="form-inline my-2 my-lg-0">
+      <button *ngIf="isUserLoggedIn" class="form-control mr-sm-2" type="search">Welcome {{username}}</button>
+      <button *ngIf="isUserLoggedIn" (click)="logout()" class="form-control mr-sm-2" type="search">Logout</button>
+      <button *ngIf="!isUserLoggedIn" routerLink="/login" class="form-control mr-sm-2" type="search">Login</button>
+      <button *ngIf="!isUserLoggedIn" routerLink="/signup" class="form-control mr-sm-2" type="search">Signup</button>      
+    </div>
+  </div>
+</nav>
